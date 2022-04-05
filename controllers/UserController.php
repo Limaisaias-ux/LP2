@@ -21,9 +21,13 @@
             $user = new user(null, null, null, null);
             $user->selectAll();
         }else{
-            echo "Página não econtrada";
+            $result['message'] = "404 - Rota da api não Encontrada";
+            $response = new Output();
+            $response->out($result, 404);
         }
     }else{
-        echo "Página não econtrada";
+        $result['message'] = "404 - Rota da api não Encontrada";
+        $response = new Output();
+        $response->out($result, 404);
     }
 ?>

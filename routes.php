@@ -6,16 +6,18 @@ $urlClean = substr($url, $lengthStrFolder); // separa a string por partes
 
 $route = explode('/', $urlClean);
 
-//automatiza o carregamento dos modelos
-spl_autoload_register(function ($class_name) {
-    require 'models/' . $class_name . '.php';
-});
+//carrega autoloaders
+require('helpers/autoloaders.php');
 
 if($route[0] == 'user'){
     require('controllers/UserController.php');
-} elseif($route[0] == 'product'){
+}elseif($route[0] == 'product'){
     require('controllers/ProductController.php');
-} else {
-    echo "404 - Página não encontrada";
+} else{
+    $result['message'] = "404 - Rota da api não Encontrada";
+    $response = new Output();
+    $response->out($result, 404);
+    
 }
+
 ?>

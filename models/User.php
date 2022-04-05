@@ -1,5 +1,4 @@
 <?php 
-require ('helpers/database.php');
 class User{
     public $id;
     public $name;
@@ -20,9 +19,17 @@ class User{
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':pass', $this->pass);
             $stmt->execute();
-            echo 'Cadastrado com sucesso!';
+            $id = $db->conn->lastInsertId();
+
+            $result['message'] = "Cadastrado com sucesso ";
+            $result['user']['id'] = $id;
+            $result['user']['name'] = $this->name;
+            $result['user']['email'] = $this->email;
+            $result['user']['pass'] = $this->pass;
         }catch(PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            $result['message'] = "Error select All User: ". $e->getMessage();
+            $response = new Output();
+            $response->out($result, 500);
         }
     }
     function delete(){
@@ -31,9 +38,14 @@ class User{
             $stmt = $db->conn->prepare("DELETE FROM users WHERE id = :id;");
             $stmt->bindParam(':id', $this->id);
             $stmt->execute();
-            echo 'Deletado com sucesso!';
+            $id = $db->conn->lastInsertId();
+
+            $result['message'] = "Deletado com sucesso ";
+            $result['user']['id'] = $id;      
         }catch(PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            $result['message'] = "404 - Rota da api não Encontrada";
+             $response = new Output();
+            $response->out($result, 500);
         }
         echo "Delete no banco".$this->id;
     }
@@ -49,7 +61,9 @@ class User{
             $stmt->execute();
             echo 'User atualizado com sucesso!';
         }catch(PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            $result['message'] = "Error select All User: ". $e->getMessage();
+            $response = new Output();
+            $response->out($result, 500);
         }
     }
     function selectAll(){
@@ -58,10 +72,16 @@ class User{
             $stmt = $db->conn->prepare("SELECT * FROM users; ");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            print_r($result);
-            echo 'User atualizado com sucesso!';
+
+           $response = new output();
+
+           $response->out($result);
+
+
         }catch(PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            $result['message'] = "Error select All User: ". $e->getMessage();
+            $response = new Output();
+            $response->out($result, 500);
         }
     }
 }
