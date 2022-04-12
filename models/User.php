@@ -33,7 +33,6 @@ class User{
             $stmt = $db->conn->prepare("DELETE FROM users WHERE id = :id;");
             $stmt->bindParam(':id', $this->id);
             $stmt->execute();
-            $id = $db->conn->lastInsertId();
             return true;
         }catch(PDOException $e) {
             $result['message'] = "404 - Rota da api não Encontrada";
