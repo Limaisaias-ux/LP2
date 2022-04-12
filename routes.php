@@ -9,13 +9,16 @@ $route = explode('/', $urlClean);
 //carrega autoloaders
 require('helpers/autoloaders.php');
 
-if($route[0] == 'user'){
-    require('controllers/UserController.php');
-}elseif($route[0] == 'product'){
-    require('controllers/ProductController.php');
-} else{
+//cria obejeto de resposta da api
+$response = new Output();
+
+//Checa se o controller existe
+$file_path = 'controllers/'.$route[0].'Controller.php';
+
+if(file_exists($file_path)){
+    require($file_path);
+}else {
     $result['message'] = "404 - Rota da api não Encontrada";
-    $response = new Output();
     $response->out($result, 404);
     
 }

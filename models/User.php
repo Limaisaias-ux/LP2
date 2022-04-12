@@ -20,12 +20,7 @@ class User{
             $stmt->bindParam(':pass', $this->pass);
             $stmt->execute();
             $id = $db->conn->lastInsertId();
-
-            $result['message'] = "Cadastrado com sucesso ";
-            $result['user']['id'] = $id;
-            $result['user']['name'] = $this->name;
-            $result['user']['email'] = $this->email;
-            $result['user']['pass'] = $this->pass;
+            return $id;
         }catch(PDOException $e) {
             $result['message'] = "Error select All User: ". $e->getMessage();
             $response = new Output();
@@ -39,9 +34,7 @@ class User{
             $stmt->bindParam(':id', $this->id);
             $stmt->execute();
             $id = $db->conn->lastInsertId();
-
-            $result['message'] = "Deletado com sucesso ";
-            $result['user']['id'] = $id;      
+            return true;
         }catch(PDOException $e) {
             $result['message'] = "404 - Rota da api não Encontrada";
              $response = new Output();
@@ -59,7 +52,7 @@ class User{
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':pass', $this->pass);
             $stmt->execute();
-            echo 'User atualizado com sucesso!';
+            return true;
         }catch(PDOException $e) {
             $result['message'] = "Error select All User: ". $e->getMessage();
             $response = new Output();
@@ -72,12 +65,7 @@ class User{
             $stmt = $db->conn->prepare("SELECT * FROM users; ");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-           $response = new output();
-
-           $response->out($result);
-
-
+            return $result;
         }catch(PDOException $e) {
             $result['message'] = "Error select All User: ". $e->getMessage();
             $response = new Output();
