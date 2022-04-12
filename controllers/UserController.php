@@ -58,30 +58,6 @@
         }
     }
 
-//checa obejeto de resposta da api
-$response = new Output();
 
-//checa se o o controller e a action existem na rota
-if(!isset($route[0]) || !isset($route[1])){
-    $result['message'] = "404 - Rota da api não Encontrada";
-    $response->out($result, 404);
-}
-
-$controller_name = $route[0];
-$action = str_replace('-', '', $route[1]);
-
-$controller_path = 'controllers/'.$controller_name.'Controller.php';
-
-//Checa se o arquivo do controller existe 
-if(file_exists($controller_path)) {
-    $controller_class_name = $controller_name.'controler';
-    $controller = new $controller_class_name();
-    if(method_exists($controller_path)){
-        $controller->$action();
-    }
-}
-
-$result['message'] = "404 - Rota da api não Encontrada";
-$response->out($result, 404);
 
 ?>
