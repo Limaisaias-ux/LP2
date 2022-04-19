@@ -14,7 +14,7 @@ class User{
         $db = new Database();
         try {
             $stmt = $db->conn->prepare("INSERT INTO users (name, email, pass)
-            VALUES (:name, :email, :pass)");
+            VALUES (:name, :email, :pass);");
             $stmt->bindParam(':name', $this->name);
             $stmt->bindParam(':email', $this->email);
             $stmt->bindParam(':pass', $this->pass);
@@ -22,7 +22,7 @@ class User{
             $id = $db->conn->lastInsertId();
             return $id;
         }catch(PDOException $e) {
-            $result['message'] = "Error select All User: ". $e->getMessage();
+            $result['message'] = "Error Select All User: " . $e->getMessage();
             $response = new Output();
             $response->out($result, 500);
         }
@@ -35,17 +35,15 @@ class User{
             $stmt->execute();
             return true;
         }catch(PDOException $e) {
-            $result['message'] = "404 - Rota da api não Encontrada";
-             $response = new Output();
+            $result['message'] = "Error Select All User: " . $e->getMessage();
+            $response = new Output();
             $response->out($result, 500);
         }
-        echo "Delete no banco".$this->id;
     }
     function update(){
         $db = new Database();
         try {
-            $stmt = $db->conn->prepare("UPDATE users SET name = :name, email = :email, pass = :pass
-            WHERE id = :id");
+            $stmt = $db->conn->prepare("UPDATE users SET name = :name, email = :email, pass = :pass WHERE id = :id;");
             $stmt->bindParam(':id', $this->id);
             $stmt->bindParam(':name', $this->name);
             $stmt->bindParam(':email', $this->email);
@@ -53,7 +51,7 @@ class User{
             $stmt->execute();
             return true;
         }catch(PDOException $e) {
-            $result['message'] = "Error select All User: ". $e->getMessage();
+            $result['message'] = "Error Select All User: " . $e->getMessage();
             $response = new Output();
             $response->out($result, 500);
         }
@@ -61,12 +59,27 @@ class User{
     function selectAll(){
         $db = new Database();
         try {
-            $stmt = $db->conn->prepare("SELECT * FROM users; ");
+            $stmt = $db->conn->prepare("SELECT * FROM users;");
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }catch(PDOException $e) {
-            $result['message'] = "Error select All User: ". $e->getMessage();
+            $result['message'] = "Error Select All User: " . $e->getMessage();
+            $response = new Output();
+            $response->out($result, 500);
+        }
+    }
+
+    function selectById(){
+        $db = new Database();
+        try {
+            $stmt = $db->conn->prepare("SELECT * FROM users WHERE id = :id;");
+            $stmt->bindParam(':id', $this->id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }catch(PDOException $e) {
+            $result['message'] = "Error Select By Id: " . $e->getMessage();
             $response = new Output();
             $response->out($result, 500);
         }
