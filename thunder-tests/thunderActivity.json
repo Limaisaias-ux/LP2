@@ -1,81 +1,58 @@
 [
-    {
-      "_id": "449a4ccb-0f1d-4b98-a836-82aee712e068",
-      "colId": "history",
-      "containerId": "",
-      "name": "http://localhost/lp2/api/auth/login",
-      "url": "http://localhost/lp2/api/auth/login",
-      "method": "POST",
-      "sortNum": 0,
-      "created": "2022-05-23T17:37:18.304Z",
-      "modified": "2022-05-23T17:37:18.467Z",
-      "headers": [],
-      "params": [],
-      "body": {
-        "type": "formdata",
-        "raw": "",
-        "form": [
-          {
-            "name": "email",
-            "value": "renancavichi@gmail.com"
-          },
-          {
-            "name": "pass",
-            "value": "321321"
-          }
-        ]
-      },
-      "tests": []
-    },
-    {
-      "_id": "b05e1537-f2b0-4528-8681-ad9c02019834",
-      "colId": "history",
-      "containerId": "",
-      "name": "http://localhost/lp2/api/user/select-all",
-      "url": "http://localhost/lp2/api/user/select-all",
-      "method": "GET",
-      "sortNum": 0,
-      "created": "2022-05-23T17:44:15.301Z",
-      "modified": "2022-05-23T17:44:15.465Z",
-      "headers": [],
-      "params": [],
-      "tests": []
-    },
-    {
-      "_id": "197cf794-2cb9-4f8c-a7c8-414e8e5e5eb4",
-      "colId": "history",
-      "containerId": "",
-      "name": "http://localhost/lp2/api/product/create",
-      "url": "http://localhost/lp2/api/product/create",
-      "method": "POST",
-      "sortNum": 0,
-      "created": "2022-05-24T18:08:17.990Z",
-      "modified": "2022-05-24T20:28:18.634Z",
-      "headers": [
+  {
+    "_id": "c57597f1-cf24-4480-8447-1a2fea73805a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/user/create",
+    "url": "http://localhost/lp2/api/user/create",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-06T19:54:26.724Z",
+    "modified": "2022-06-06T19:54:27.157Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
         {
-          "name": "Access-Token",
-          "value": "sadasd"
+          "name": "name",
+          "value": "Isaias Rodrigo Lima da Conceiçao"
+        },
+        {
+          "name": "email",
+          "value": "isaiaslima@gmail.com"
+        },
+        {
+          "name": "date",
+          "value": "01/01/2003"
+        },
+        {
+          "name": "cpf",
+          "value": "12345678912"
+        },
+        {
+          "name": "city",
+          "value": "Caraguatatuba"
+        },
+        {
+          "name": "state",
+          "value": "São Paulo"
+        },
+        {
+          "name": "cep",
+          "value": "12345678"
+        },
+        {
+          "name": "pass",
+          "value": "123321"
+        },
+        {
+          "name": "roles",
+          "value": "admin"
         }
-      ],
-      "params": [],
-      "body": {
-        "type": "formdata",
-        "raw": "",
-        "form": [
-          {
-            "name": "title",
-            "value": "asdasd"
-          },
-          {
-            "name": "photo",
-            "value": "asdasd"
-          },
-          {
-            "name": "price",
-            "value": "asdasd"
-          }
-        ]
-      },
-      "tests": []
-    }
-  ]
+      ]
+    },
+    "tests": []
+  }
+]
