@@ -11,7 +11,7 @@ class AuthController{
 
         $description = $_SERVER['HTTP_USER_AGENT'];
 
-        $user = new User(null, null, $email, sha1($pass));
+        $user = new User(null, null, $email, null, null, null, null, null, sha1($pass));
         $userLogged = $user->login();
         
         if($userLogged){

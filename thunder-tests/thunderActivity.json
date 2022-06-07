@@ -54,5 +54,100 @@
       ]
     },
     "tests": []
+  },
+  {
+    "_id": "69a8da7b-7a1b-47be-8c36-a0857c8245e5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/auth/login",
+    "url": "http://localhost/lp2/api/auth/login",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-07T17:56:50.622Z",
+    "modified": "2022-06-07T18:37:10.810Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "email",
+          "value": "isaiaslima@gmail.com"
+        },
+        {
+          "name": "pass",
+          "value": "123321"
+        }
+      ]
+    },
+    "tests": []
+  },
+  {
+    "_id": "9087a385-c543-4602-acc3-2ca5ae359331",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/product/create?photo&title&description&price",
+    "url": "http://localhost/lp2/api/product/create?photo&title&description&price",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-07T18:05:13.765Z",
+    "modified": "2022-06-07T18:05:13.917Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "photo",
+        "value": "",
+        "isPath": false
+      },
+      {
+        "name": "title",
+        "value": "",
+        "isPath": false
+      },
+      {
+        "name": "description",
+        "value": "",
+        "isPath": false
+      },
+      {
+        "name": "price",
+        "value": "",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "dc2afd8e-0ce2-402e-a280-1411255515c1",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/product/update",
+    "url": "http://localhost/lp2/api/product/update",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-07T18:52:39.546Z",
+    "modified": "2022-06-07T18:53:10.945Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "Accept",
+          "value": "*/*"
+        },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.com)"
+        },
+        {
+          "name": "Access-Token",
+          "value": "42ca075123aacc860a56337b64c0c65f"
+        }
+      ]
+    },
+    "tests": []
   }
 ]
