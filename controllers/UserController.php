@@ -5,6 +5,7 @@ class UserController{
         $response = new Output();
         $response->allowedMethod('POST');
         //Entradas
+        var_dump($_POST);
         $name = $_POST['name'];
         $email = $_POST['email'];
         $date = $_POST['date'];
