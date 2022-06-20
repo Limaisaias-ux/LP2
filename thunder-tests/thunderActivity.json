@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-06T19:54:26.724Z",
-    "modified": "2022-06-06T19:54:27.157Z",
+    "modified": "2022-06-20T19:41:35.012Z",
     "headers": [],
     "params": [],
     "body": {
@@ -45,7 +45,7 @@
         },
         {
           "name": "pass",
-          "value": "123321"
+          "value": "40405050"
         },
         {
           "name": "roles",
@@ -64,7 +64,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-07T17:56:50.622Z",
-    "modified": "2022-06-07T18:37:10.810Z",
+    "modified": "2022-06-20T19:51:04.353Z",
     "headers": [],
     "params": [],
     "body": {
@@ -77,7 +77,7 @@
         },
         {
           "name": "pass",
-          "value": "123321"
+          "value": "40405050"
         }
       ]
     },
@@ -88,34 +88,40 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost/lp2/api/product/create?photo&title&description&price",
-    "url": "http://localhost/lp2/api/product/create?photo&title&description&price",
+    "url": "http://localhost/lp2/api/product/create",
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-07T18:05:13.765Z",
-    "modified": "2022-06-07T18:05:13.917Z",
-    "headers": [],
-    "params": [
+    "modified": "2022-06-20T20:46:07.392Z",
+    "headers": [
       {
-        "name": "photo",
-        "value": "",
-        "isPath": false
-      },
-      {
-        "name": "title",
-        "value": "",
-        "isPath": false
-      },
-      {
-        "name": "description",
-        "value": "",
-        "isPath": false
-      },
-      {
-        "name": "price",
-        "value": "",
-        "isPath": false
+        "name": "ACCESS_TOKEN",
+        "value": "678ef9bad2dfdfbbdf12214a162d3836"
       }
     ],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "photo",
+          "value": "https://i.pinimg.com/564x/71/27/91/712791f6149964ef31e3aa96ee79dbb5.jpg"
+        },
+        {
+          "name": "title",
+          "value": "Ração Golden Special"
+        },
+        {
+          "name": "description",
+          "value": "Ração Golden Special Sabor Frango e Carne para Cães Adultos, 15kg Premier Pet Para Todas Grande Adulto"
+        },
+        {
+          "name": "price",
+          "value": "120,00"
+        }
+      ]
+    },
     "tests": []
   },
   {

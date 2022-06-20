@@ -35,10 +35,10 @@ function delete(){
     $user_session = $auth->allowedRole('admin');
 
     $id = $_POST['id'];
-    $user = new User($id, null, null, null, null);
-    $user->delete();
+    $product = new User($id, null, null, null, null);
+    $product->delete();
     $result['message'] = "User deletado com sucesso!";
-    $result['user']['id'] = $id;
+    $result['product']['id'] = $id;
     $response->out($result);
 }
 
@@ -49,34 +49,26 @@ function update(){
     $auth = new Auth();
     $user_session = $auth->allowedRole('admin');
 
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $date = $_POST['date'];
-    $cpf  = $_POST['cpf'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $cep = $_POST['cep'];
-    $pass = $_POST['pass'];
-    $user = new User($id, $name, $email, $date, $cpf, $city, $state, $cep, $pass);
-    $user->update();
-    $result['message'] = "User atualizado com sucesso!";
-    $result['user']['id'] = $id;
-    $result['user']['name'] = $name;
-    $result['user']['email'] = $email;
-    $result['user']['date'] = $date;
-    $result['user']['cpf'] = $cpf;
-    $result['user']['city'] = $city;
-    $result['user']['state'] = $state;
-    $result['user']['cep'] = $cep;
+    $photo = $_POST['photo'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+    $product = new Product(null, $photo, $title, $description, $price);
+    $id = $product->create();
+
+    $result['message'] = "Produto Cadastrado com sucesso!";
+    $result['product']['id'] = $id;
+    $result['product']['photo'] = $photo;
+    $result['product']['description'] = $description;
+    $result['product']['title'] = $title;
+    $result['product']['price'] = $price;
     $response->out($result);
 }
-
 function selectAll(){
     $response = new Output();
     $response->allowedMethod('GET');
-    $user = new User(null, null, null, null, null, null, null, null);
-    $result = $user->selectAll();
+    $product = new Product(null, null, null, null, null);
+    $result = $product->selectAll();
     $response->out($result);
 }
 
@@ -84,8 +76,8 @@ function selectById(){
     $response = new Output();
     $response->allowedMethod('GET');
     $id = $_GET['id'];
-    $user = new User($id, null, null, null, null, null, null, null);
-    $result = $user->selectById();
+    $product = new Product(null, null, null, null, null);
+    $result = $product->selectById();
     $response->out($result);
 }
 

@@ -3,20 +3,23 @@ class Product{
     public $id;
     public $photo;
     public $title;
+    public $description;
     public $price;
-    function __construct($id, $photo, $title, $price) {
+    function __construct($id, $photo, $title, $description, $price) {
         $this->id = $id;
         $this->photo = $photo;
         $this->title = $title;
+        $this->description = $description;
         $this->price = $price;
     }
     function create(){
         $db = new Database();
         try {
-            $stmt = $db->conn->prepare("INSERT INTO products (photo, title, price)
+            $stmt = $db->conn->prepare("INSERT INTO products (photo, title, description, price)
             VALUES (:photo, :title, :price);");
             $stmt->bindParam(':photo', $this->photo);
             $stmt->bindParam(':title', $this->title);
+            $stmt->bindParam(':description', $this->description);
             $stmt->bindParam(':price', $this->price);
             $stmt->execute();
             $id = $db->conn->lastInsertId();
@@ -43,10 +46,11 @@ class Product{
     function update(){
         $db = new Database();
         try {
-            $stmt = $db->conn->prepare("UPDATE products SET photo = :photo, title = :title, price = :price WHERE id = :id;");
+            $stmt = $db->conn->prepare("UPDATE products SET photo = :photo, title = :title, description = :description, price = :price WHERE id = :id;");
             $stmt->bindParam(':id', $this->id);
             $stmt->bindParam(':photo', $this->photo);
             $stmt->bindParam(':title', $this->title);
+            $stmt->bindParam(':description', $this->description);
             $stmt->bindParam(':price', $this->price);
             $stmt->execute();
             return true;
