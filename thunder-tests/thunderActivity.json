@@ -92,7 +92,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-07T18:05:13.765Z",
-    "modified": "2022-06-20T20:46:07.392Z",
+    "modified": "2022-06-21T18:27:43.780Z",
     "headers": [
       {
         "name": "ACCESS_TOKEN",
@@ -106,19 +106,19 @@
       "form": [
         {
           "name": "photo",
-          "value": "https://i.pinimg.com/564x/71/27/91/712791f6149964ef31e3aa96ee79dbb5.jpg"
+          "value": "https://i.pinimg.com/564x/b1/bf/22/b1bf227fecc69a8038b3b050eb6609ca.jpg"
         },
         {
           "name": "title",
-          "value": "Ração Golden Special"
+          "value": "Roupa para Cachorro"
         },
         {
           "name": "description",
-          "value": "Ração Golden Special Sabor Frango e Carne para Cães Adultos, 15kg Premier Pet Para Todas Grande Adulto"
+          "value": "Roupa para Cachorro de Grande Porte"
         },
         {
           "name": "price",
-          "value": "120,00"
+          "value": "125"
         }
       ]
     },

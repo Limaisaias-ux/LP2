@@ -16,7 +16,7 @@ class Product{
         $db = new Database();
         try {
             $stmt = $db->conn->prepare("INSERT INTO products (photo, title, description, price)
-            VALUES (:photo, :title, :price);");
+            VALUES (:photo, :title, :description, :price);");
             $stmt->bindParam(':photo', $this->photo);
             $stmt->bindParam(':title', $this->title);
             $stmt->bindParam(':description', $this->description);
