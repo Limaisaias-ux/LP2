@@ -4,11 +4,13 @@ class Auth{
         $response = new Output();
         //Verifia se possui ACCESS_TOKEN
         $headers = apache_request_headers();
-        if(!isset($headers['access_token'])){
+        $access_token = $headers['Access-Token'];
+        //echo $access_token;
+        if(!$access_token){
             $result['message'] = "ACCESS_TOKEN não informado!";
             $response->out($result, 403);
         }
-        $token = $headers['access_token'];
+        $token = $access_token;
 
         $session = new Session(null, $token, null);
         $user_session = $session->checkSessionRoles();
