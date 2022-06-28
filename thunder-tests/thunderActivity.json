@@ -92,7 +92,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-07T18:05:13.765Z",
-    "modified": "2022-06-21T18:27:43.780Z",
+    "modified": "2022-06-27T20:08:23.248Z",
     "headers": [
       {
         "name": "ACCESS_TOKEN",
@@ -133,24 +133,91 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-07T18:52:39.546Z",
-    "modified": "2022-06-07T18:53:10.945Z",
-    "headers": [],
+    "modified": "2022-06-27T20:08:40.173Z",
+    "headers": [
+      {
+        "name": "ACCESS-TOKEN",
+        "value": "42ca075123aacc860a56337b64c0c65f"
+      }
+    ],
     "params": [],
     "body": {
       "type": "formdata",
       "raw": "",
       "form": [
         {
-          "name": "Accept",
-          "value": "*/*"
+          "name": "id",
+          "value": "2"
         },
         {
-          "name": "User-Agent",
-          "value": "Thunder Client (https://www.thunderclient.com)"
+          "name": "photo",
+          "value": "https://i.pinimg.com/564x/0e/3a/64/0e3a64f5fd49a5c10f2dae1f98aabe2c.jpg"
         },
         {
-          "name": "Access-Token",
-          "value": "42ca075123aacc860a56337b64c0c65f"
+          "name": "title",
+          "value": "edita logooo"
+        },
+        {
+          "name": "description",
+          "value": "to tentando editar esse produto pelo thunder"
+        },
+        {
+          "name": "price",
+          "value": "10"
+        }
+      ]
+    },
+    "tests": []
+  },
+  {
+    "_id": "794463d6-c4af-419d-90ef-de35aea834ea",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/product/update?id=21",
+    "url": "http://localhost/lp2/api/product/delete?id=21",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-28T01:02:44.530Z",
+    "modified": "2022-06-28T01:04:20.913Z",
+    "headers": [
+      {
+        "name": "ACCESS-TOKEN",
+        "value": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "id",
+        "value": "21",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e8cc8103-cb23-4c0e-9b68-a7eb5ced8009",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost/lp2/api/product/delete",
+    "url": "http://localhost/lp2/api/product/delete",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-28T01:22:14.790Z",
+    "modified": "2022-06-28T02:11:27.122Z",
+    "headers": [
+      {
+        "name": "ACCESS-TOKEN",
+        "value": "f18c3c7517f7f7c0b0860802b5306873 "
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "id",
+          "value": "21"
         }
       ]
     },

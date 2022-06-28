@@ -35,9 +35,9 @@ function delete(){
     $user_session = $auth->allowedRole('admin');
 
     $id = $_POST['id'];
-    $product = new User($id, null, null, null, null);
+    $product = new Product($id, null, null, null, null);
     $product->delete();
-    $result['message'] = "User deletado com sucesso!";
+    $result['message'] = "Produto deletado com sucesso!";
     $result['product']['id'] = $id;
     $response->out($result);
 }
@@ -49,14 +49,15 @@ function update(){
     $auth = new Auth();
     $user_session = $auth->allowedRole('admin');
 
+    $id = $_POST['id'];
     $photo = $_POST['photo'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
-    $product = new Product(null, $photo, $title, $description, $price);
-    $id = $product->create();
+    $product = new Product($id, $photo, $title, $description, $price);
+    $id = $product->update();
 
-    $result['message'] = "Produto Cadastrado com sucesso!";
+    $result['message'] = "Produto Editado com sucesso!";
     $result['product']['id'] = $id;
     $result['product']['photo'] = $photo;
     $result['product']['description'] = $description;
@@ -76,7 +77,7 @@ function selectById(){
     $response = new Output();
     $response->allowedMethod('GET');
     $id = $_GET['id'];
-    $product = new Product(null, null, null, null, null);
+    $product = new Product($id, null, null, null, null);
     $result = $product->selectById();
     $response->out($result);
 }
